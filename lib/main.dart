@@ -92,13 +92,23 @@ class _CounterPageState extends State<CounterPage> {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(170, 60),
                     ),
-                    child: Text(
-                        'Increase',
-                        style: TextStyle(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Icon(
+                          Icons.add,
+                          size: 30,
                           color: Colors.black,
-                          fontSize: 16,
                         ),
-
+                        SizedBox(width: 8),
+                        Text(
+                          'Increase',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        )
+                      ],
                     ),
                   ),
 
@@ -109,17 +119,25 @@ class _CounterPageState extends State<CounterPage> {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(170, 60),
                     ),
-                    child: Text(
-                        'Decrease',
-                        style: TextStyle(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.remove,
+                          size: 30,
                           color: Colors.black,
-                          fontSize: 16,
                         ),
+                        SizedBox(width: 8),
+                        Text(
+                           'Decrease',
+                           style: TextStyle(
+                             color: Colors.black,
+                             fontSize: 16,
+                           ),
+                        ),
+                      ],
                     ),
                   ),
-
-                  SizedBox(height: 15),
-
                 ],
               ),
               SizedBox(height: 20),
@@ -131,12 +149,24 @@ class _CounterPageState extends State<CounterPage> {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(170, 60),
                     ),
-                    child: Text(
-                        'Reset',
-                        style: TextStyle(
+
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.refresh,
+                          size: 30,
                           color: Colors.black,
-                          fontSize: 16,
                         ),
+                        SizedBox(width: 8),
+                        Text(
+                          'Reset',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
