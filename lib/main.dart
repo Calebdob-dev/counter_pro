@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: CounterPage(),
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // Removes the red "Debug" banner from the corner
     );
   }
 }
@@ -20,20 +20,24 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
+  // Application State: current value of the counter
   int count = 0;
 
+  // Function to increment the counter value
   void increase() {
     setState(() {
       count++;
     });
   }
 
+  // Function to decrement the counter value
   void decrease() {
     setState(() {
       count--;
     });
   }
 
+  // Function to set the counter back to zero
   void reset() {
     setState(() {
       count = 0;
@@ -43,20 +47,20 @@ class _CounterPageState extends State<CounterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[300], // Set light grey background for the app
       appBar: AppBar(
         title: Text(
-            'Counter App',
-            style: TextStyle(color: Colors.white,
-                fontWeight: FontWeight.bold
-            ),
+          'Counter App',
+          style: TextStyle(color: Colors.white,
+              fontWeight: FontWeight.bold
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.blue[800],
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.only(bottom: 240),
+          padding: EdgeInsets.only(bottom: 240), // Shifts the content slightly upwards
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -67,9 +71,9 @@ class _CounterPageState extends State<CounterPage> {
                 ),
               ),
 
-
               SizedBox(height: 20),
 
+              // Display the current count from the state
               Text(
                 "$count",
                 style: TextStyle(
@@ -77,13 +81,16 @@ class _CounterPageState extends State<CounterPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+
               Divider(
                 height: 50,
                 color: Colors.grey,
+                indent: 40, endIndent: 40,
               ),
 
               SizedBox(height: 1),
 
+              // Horizontal row containing Increase and Decrease buttons
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -129,18 +136,21 @@ class _CounterPageState extends State<CounterPage> {
                         ),
                         SizedBox(width: 8),
                         Text(
-                           'Decrease',
-                           style: TextStyle(
-                             color: Colors.black,
-                             fontSize: 16,
-                           ),
+                          'Decrease',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ],
               ),
+
               SizedBox(height: 20),
+
+              // Reset button section
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -171,8 +181,6 @@ class _CounterPageState extends State<CounterPage> {
                   ),
                 ],
               ),
-
-
             ],
           ),
         ),
